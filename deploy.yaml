@@ -13,9 +13,9 @@ spec:
         app: myweb
     spec:
       volumes:
-      - name: logpv
+      - name: logpv1
         persistentVolumeClaim:
-          claimName: logpv
+          claimName: logpv1
       containers:
       - name: myweb-pod
         image: dheeth/kube-web
@@ -23,4 +23,4 @@ spec:
         - containerPort: 80
         volumeMounts:
           - mountPath: /var/log/httpd
-            name: logpv
+            name: logpv1
